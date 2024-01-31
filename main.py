@@ -49,8 +49,8 @@ def categorize_responses(responses, categories):
 
 
 # Example usage
-file_path = 'Results_data_SmartWifiPods_deepdive_Okt23_translated - promotors_only.xlsx'
-column_name = 'Q1.3'
+file_path = 'input_file.xlsx'
+column_name = 'Response'
 
 df = load_excel(file_path)
 responses = df[column_name]
@@ -59,7 +59,7 @@ print(categories)
 df['Categorized Responses'] = categorize_responses(responses, categories)
 
 # Save the DataFrame back to Excel
-output_file_path = 'PODs_Internet_NPS_Codeword_analysis_promotors.xlsx'
+output_file_path = 'output_file.xlsx'
 df.to_excel(output_file_path, index=False)
 
 print(f"Categorized responses added and saved to {output_file_path}")
